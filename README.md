@@ -5,6 +5,7 @@ Control json serialization using decorators.
 # Usage
 
 Inherit from JsonObject
+
     class MyJsonObjectClass(JsonObject):
         def __init__(self):
             self._test_prop = None
@@ -18,4 +19,9 @@ Decorate getter method with @json_property
 
 use json() method inherited from JsonObject to serialize
 
-        actual = myclass.json(MyClass, myclass)
+        actual = myclass.json()
+
+# Hacking
+
+Serializing properties as collections, maybe extend this to (gasp) xml. 
+Take a look at serialization properties in c# for more.
