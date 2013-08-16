@@ -33,7 +33,7 @@ class JsonObjectTests(unittest.TestCase):
         myclass._test_prop = 'foo' 
 
         expected = {'json_test_prop': 'foo'}
-        actual = myclass._to_json_dict(MyClass, myclass)
+        actual = myclass._to_json_dict(myclass)
 
         self.assertEqual(actual, expected) 
 
@@ -42,7 +42,7 @@ class JsonObjectTests(unittest.TestCase):
         myclass._test_prop = 'foo' 
 
         expected = '{"json_test_prop": "foo"}'
-        actual = myclass.json(MyClass, myclass)
+        actual = myclass.json()
 
         self.assertEqual(actual, expected) 
 
@@ -53,7 +53,7 @@ class JsonPropertyTests(unittest.TestCase):
         myclass._test_prop = 'foo' 
 
         expected = {'json_test_prop': 'foo'}
-        actual = myclass._to_json_dict(MyClass, myclass)
+        actual = myclass._to_json_dict(myclass)
 
         self.assertEqual(actual, expected) 
 
@@ -61,7 +61,7 @@ class JsonPropertyTests(unittest.TestCase):
         myclass = MyClass()
 
         expected = {}
-        actual = myclass._to_json_dict(MyClass, myclass)
+        actual = myclass._to_json_dict(myclass)
 
         self.assertEqual(actual, expected) 
     
@@ -69,6 +69,6 @@ class JsonPropertyTests(unittest.TestCase):
         myclass = MyClassSerializeNulls()
 
         expected = {'json_test_prop': None}
-        actual = myclass._to_json_dict(MyClassSerializeNulls, myclass)
+        actual = myclass._to_json_dict(myclass)
 
         self.assertEqual(actual, expected) 

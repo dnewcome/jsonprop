@@ -1,8 +1,10 @@
 from json_property import json_property
 import json
 
-class JsonObject:
-    def _to_json_dict(self, cls, obj):
+class JsonObject(object):
+    def _to_json_dict(self, obj):
+        cls = type(self)
+        print 'type is ' + str(cls)
         retval = {}
         for key in cls.__dict__:
             item = cls.__dict__[key] 
@@ -14,7 +16,7 @@ class JsonObject:
 
         return retval 
 
-    def json(self, cls, obj):
-        return json.dumps(self._to_json_dict(cls, obj))
+    def json(self):
+        return json.dumps(self._to_json_dict(self))
 
 
