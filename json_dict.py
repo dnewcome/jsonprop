@@ -4,7 +4,6 @@ import json
 class JsonObject(object):
     def _to_json_dict(self):
         cls = type(self)
-        print 'type is ' + str(cls)
         retval = {}
         for key in cls.__dict__:
             item = cls.__dict__[key] 
