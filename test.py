@@ -19,6 +19,14 @@ class MyClassSerializeNulls(JsonObject):
     def get_test_prop(self):
         return self._test_prop 
 
+class MyClassDefaults(JsonObject):
+    def __init__(self):
+        self._test_prop = None
+
+    @json_property()
+    def get_test_prop(self):
+        return self._test_prop 
+
 class MyJsonObjectClass(JsonObject):
     def __init__(self):
         self._test_prop = None
@@ -46,6 +54,16 @@ class JsonObjectTests(unittest.TestCase):
 
         self.assertEqual(actual, expected) 
 
+    def test_json_defaults(self):
+        myclass = MyClassDefaults()
+        myclass._test_prop = 'foo' 
+
+        expected = '{"get_test_prop": "foo"}'
+        actual = myclass.json()
+
+        self.assertEqual(actual, expected) 
+
+
 class JsonPropertyTests(unittest.TestCase):
 
     def test_nominal(self):
@@ -72,3 +90,4 @@ class JsonPropertyTests(unittest.TestCase):
         actual = myclass._to_json_dict()
 
         self.assertEqual(actual, expected) 
+
