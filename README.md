@@ -1,8 +1,10 @@
 # About
 
-Control json serialization using decorators.
+Control JSON serialization of python objects using decorators.
 
 # Usage
+
+    from jsonprop import JsonObject, json_property
 
 Inherit from JsonObject
 
@@ -19,7 +21,21 @@ Decorate getter method with @json_property
 
 use json() method inherited from JsonObject to serialize
 
-        actual = myclass.json()
+        json = myclass.json()
+
+# API
+
+The general form of the decorator is:
+
+    json_property(name, include_null)
+
+where name is the desired JSON field name for the python property and 
+include_null is a boolean that indicates whether or not null values will 
+be included in the serialization. By default this value is True and null values
+will be serialized. If this is set to False, the field will be omitted entirely
+in the serialized JSON output in the event that the value of the field is
+None.
+
 
 # Hacking
 
