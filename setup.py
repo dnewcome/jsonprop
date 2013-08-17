@@ -10,7 +10,7 @@ def read(fname):
 
 setup(
     name = "jsonprop",
-    version = "0.0.1",
+    version = "0.0.2",
     author = "Dan Newcome",
     author_email = "dnewcome@circleup.com",
     description = ("A json serialization library for python."),
@@ -18,11 +18,11 @@ setup(
     keywords = "json serialization",
     url = "http://packages.python.org/jsonprop",
     packages=['jsonprop'],
-    long_description = read('README.md'),
+    long_description = read('README'),
     install_requires = [],
     classifiers = [
         "Development Status :: 3 - Alpha",
-        "Topic :: Libraries",
+	"Topic :: Software Development :: Libraries",
         "License :: OSI Approved :: BSD License",
     ],
 )
