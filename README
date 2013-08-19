@@ -30,6 +30,16 @@ use json() method inherited from JsonObject to serialize
 
         json = myclass.json()
 
+Alternatively, use the json_field to concisely specify a set of serializable fields
+on an object that may be assigned to as descriptors.
+
+    class MyObj(JsonObject):
+        field_one = json_field('fieldOne')
+        field_two = json_field('fieldTwo')
+
+Which may be serialized in the same manner as above.
+
+
 # API
 
 The general form of the decorator is:
@@ -54,3 +64,7 @@ decorator must be called as a constructor, i.e. using empty parens `()'
 
 Serializing properties as collections, maybe extend this to (gasp) xml. 
 Take a look at serialization properties in c# for more.
+
+# Todo
+
+Initializer syntax using tuples as recordtype.
