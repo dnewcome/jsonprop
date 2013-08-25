@@ -3,6 +3,11 @@ from json_field import json_field
 import json
 
 class JsonObject(object):
+
+    def __init__(self, **kwargs):
+        for arg in kwargs:
+            setattr(self, arg, kwargs[arg])
+
     def _to_json_dict(self):
         cls = type(self)
         retval = {}
