@@ -10,7 +10,7 @@ def read(fname):
 
 setup(
     name = "jsonprop",
-    version = "0.0.4",
+    version = "0.0.5",
     author = "Dan Newcome",
     author_email = "dnewcome@circleup.com",
     description = ("A json serialization library for python."),

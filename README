@@ -39,6 +39,11 @@ on an object that may be assigned to as descriptors.
 
 Which may be serialized in the same manner as above.
 
+JsonObject supports the use of keyword arguments at object initialization time. The
+example class above may be conveniently instantiated as follows:
+
+    myobj = MyObj(field_one = 'one', field_two = 'two')
+
 
 # API
 
