@@ -1,7 +1,5 @@
-import json
 from json_field import json_field
 from json_dict import JsonObject
-from json_encoder import JsonObjectEncoder
 import unittest
 
 class MyClass(JsonObject):
@@ -17,7 +15,7 @@ class JsonFieldTests(unittest.TestCase):
         myparent = MyClass( child = mychild )
 
         expected = '{"json_child": {"json_test_prop": "foo"}}'
-        actual = json.dumps( myparent._to_json_dict(), cls=JsonObjectEncoder)
+        actual = myparent.json()
 
         self.assertEqual(actual, expected) 
 

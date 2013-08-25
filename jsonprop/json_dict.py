@@ -1,5 +1,6 @@
 from json_property import json_property
 from json_field import json_field
+from json_encoder import JsonObjectEncoder
 import json
 
 class JsonObject(object):
@@ -22,6 +23,5 @@ class JsonObject(object):
         return retval 
 
     def json(self):
-        return json.dumps(self._to_json_dict())
-
+        return json.dumps(self._to_json_dict(), cls=JsonObjectEncoder)
 
