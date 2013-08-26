@@ -7,6 +7,10 @@ Fine-grained control of JSON serialization using decorators.
 Because sometimes you just need to serialize a few properties/exclude
 null values/rename fields and want to do it declaratively.
 
+# Installation
+
+    $ pip install jsonprop
+
 # Usage
 
 Imports
